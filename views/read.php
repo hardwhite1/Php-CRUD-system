@@ -25,6 +25,10 @@
         background: #f0f0f0;
         color: #444;
     }
+    h2 {
+        background: #f0f0f0;
+        color: #444;
+    }
     tr:nth-child(even) {
         background: #f9f9f9;
     }
@@ -33,15 +37,14 @@
         text-decoration: none;
         margin: 0 4px;
     }
+    
     a:hover {
         text-decoration: underline;
     }
 </style>
 
-<h2> User List</h2>
-
 <table border="1">
-
+<h2> User List</h2>
 <tr>
     <th>ID</th>
     <th>Name</th>
@@ -60,7 +63,7 @@ while($row = $result->fetch_assoc())
             <td>{$row['email']}</td>
             <td>{$row['age']}</td>
             <td>
-                <a href='update.php?id={$row['id']}'>Edit</a> |
+                <a href='../views/update.php?id={$row['id']}'>Edit</a> |
                 <a href='delete.php?id={$row['id']}'>Delete</a>
             </td>
         </tr>
@@ -69,3 +72,4 @@ while($row = $result->fetch_assoc())
 }
 ?>
 </table>
+<p>Click <a href="../views/create.php">here</a>to create new users!</p>
